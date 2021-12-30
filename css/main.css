@@ -36,13 +36,12 @@ main #main-grid {
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 33%);
   grid-gap: 10px; }
   main #main-grid div {
     background-size: cover; }
     main #main-grid div .overlay {
       margin: 0;
-      padding-top: 100%;
       text-align: center;
       font-size: 2em;
       font-weight: 700;
@@ -52,7 +51,10 @@ main #main-grid {
       width: 100%;
       opacity: 0;
       background: rgba(0, 0, 0, 0.3);
-      transition: all .2s ease-in-out; }
+      transition: all .2s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
 
 main #item-1 {
   grid-area: 1/1/3/2;
@@ -79,25 +81,25 @@ main #item-4 {
     opacity: 1; }
 
 main #item-5 {
-  grid-area: 3/1/5/2;
+  grid-area: 3/1/4/2;
   background-image: url(../public/main-5.webp); }
   main #item-5:hover .overlay {
     opacity: 1; }
 
 main #item-6 {
-  grid-area: 3/2/5/3;
+  grid-area: 3/2/4/3;
   background-image: url(../public/main-6.webp); }
   main #item-6:hover .overlay {
     opacity: 1; }
 
 main #item-7 {
-  grid-area: 2/3/5/4;
+  grid-area: 2/3/4/4;
   background-image: url(../public/main-7.webp); }
   main #item-7:hover .overlay {
     opacity: 1; }
 
 main #item-8 {
-  grid-area: 3/4/5/5;
+  grid-area: 3/4/4/5;
   background-image: url(../public/main-8.webp); }
   main #item-8:hover .overlay {
     opacity: 1; }
