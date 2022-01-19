@@ -10,7 +10,7 @@ class Habitacion {
         this.precio=this.precio*1.21;
     }
     mostrarDatos(){
-        alert("La "+this.nombre+" tiene una capacidad de "+this.capacidad+" persona/s, y cuesta $"+this.precio+" por día (IVA incluido).");
+        console.log("La "+this.nombre+" tiene una capacidad de "+this.capacidad+" persona/s, y cuesta $"+this.precio+" por día (IVA incluido).");
     }
 }
 
@@ -40,43 +40,30 @@ habitacionCuadruple.mostrarDatos();
 habitacionFamiliar.mostrarDatos();
 
 
-// const habSimple=50;
-// const habDoble=120;
-// const habFamiliar=250;
+// ===================================
 
-// class DatosAlojamiento {
-//     constructor (adultos,menores,dias) {
-//         this.adultos = adultos;
-//         this.menores = menores;
-//         this.dias = dias;
-//         this.huespedes = this.adultos+this.menores;
-//         this.mostrarInfo = function () {
-//             alert("Usted ingresó la siguiente información: "+adultos+" adultos, "+menores+" menores, "+dias+" días.");
-//         }
-//         this.calcularPrecio = function () {
-//             if(this.huespedes==1){
-//                 precio=habSimple*dias;
-//             } else if (this.huespedes==2) {
-//                 precio=habDoble*dias;
-//             } else if ((this.huespedes>2)&&(this.huespedes<=6)) {
-//                 precio=habFamiliar*dias;
-//             } else {
-//                 alert("No tenemos habitaciones disponibles.");
-//             }
-//         }
-        
-//         this.mostrarPrecio = function () {
-//             alert("Su estadía de "+dias+" dias, para "+(adultos+menores)+" personas, es de $ "+precio+".");
-//         }
-//     }
-// }
+let adultos = parseInt(prompt("Ingrese la cantidad de adultos:"));
+let menores = parseInt(prompt("Ingrese la cantidad de menores:"));
+let dias = parseInt(prompt("Ingrese la cantidad de días:"));
+let huespedes = adultos+menores;
+let precio = 0;
 
-// const ingresoDatos=new DatosAlojamiento(
-//     (prompt("Ingrese la cantidad de adultos:")),
-//     (prompt("Ingrese la cantidad de menores:")),
-//     (prompt("Ingrese la cantidad de días:"))
-// );
+function calcularPrecio(){
+    if (huespedes==1) {
+        precio = habitacionSimple.precio*dias;
+        alert("Su estadía de "+dias+" dias, para "+huespedes+" persona, en una habitación simple, es de $"+precio+".");
+    } else if (huespedes==2) {
+        precio = habitacionDoble.precio*dias;
+        alert("Su estadía de "+dias+" dias, para "+huespedes+" personas, en una habitación doble, es de $"+precio+".");
+    }else if ((huespedes==3)||(huespedes==4)) {
+        precio = habitacionCuadruple.precio*dias;
+        alert("Su estadía de "+dias+" dias, para "+huespedes+" personas, en una habitación cuádruple, es de $"+precio+".");
+    }else if ((huespedes==5)||(huespedes==6)) {
+        precio = habitacionFamiliar.precio*dias;
+        alert("Su estadía de "+dias+" dias, para "+huespedes+" personas, en una habitación familiar, es de $"+precio+".");
+    }else {
+        alert("No tenemos habitaciones disponibles.");
+    }
+}
 
-// ingresoDatos.mostrarInfo();
-// ingresoDatos.calcularPrecio();
-// ingresoDatos.mostrarPrecio();
+calcularPrecio();
