@@ -47,73 +47,6 @@ console.log(habitacionesFamiliares);
 
 // ===========================
 
-let contenedorHabitaciones = document.getElementById("contenedor-habitaciones");
-
-
-// for (let index = 0; index < habitacionesSimples.length; index++) {
-//     let habitacion=document.createElement("div");
-//     habitacion.innerHTML = `<img class="img-fluid rounded img-room" src="../public/${habitacionesSimples[index].tipo}.jpg" alt="">
-//                             <div class="d-flex flex-column align-items-center w-100 p-2">
-//                                 <h3 class="text-center">${habitacionesSimples[index].nombre}</h3>
-//                                 <p>${habitacionesSimples[index].info}</p>
-//                                 <p>${habitacionesSimples[index].descripcion}</p>
-//                                 <p>$${habitacionesSimples[index].precio}</p>
-//                                 <a href="#"><button type="button" class="btn btn-primary">SELECCIONAR</button></a>
-//                             </div>`; 
-//     habitacion.className = ("d-flex");
-//     habitacion.classList.add("border","flex-row","mb-3","rounded")
-//     contenedorHabitaciones.appendChild(habitacion);
-    
-// }
-
-// for (let index = 0; index < habitacionesDobles.length; index++) {
-//     let habitacion=document.createElement("div");
-//     habitacion.innerHTML = `<img class="img-fluid rounded img-room" src="../public/${habitacionesDobles[index].tipo}.jpg" alt="">
-//                             <div class="d-flex flex-column align-items-center w-100 p-2">
-//                                 <h3 class="text-center">${habitacionesDobles[index].nombre}</h3>
-//                                 <p>${habitacionesDobles[index].info}</p>
-//                                 <p>${habitacionesDobles[index].descripcion}</p>
-//                                 <p>$${habitacionesDobles[index].precio}</p>
-//                                 <a href="#"><button type="button" class="btn btn-primary">SELECCIONAR</button></a>
-//                             </div>`; 
-//     habitacion.className = ("border");
-//     habitacion.classList.add("d-flex","flex-row","mb-3","rounded")
-//     contenedorHabitaciones.appendChild(habitacion);
-    
-// }
-
-// for (let index = 0; index < habitacionesCuadruples.length; index++) {
-//     let habitacion=document.createElement("div");
-//     habitacion.innerHTML = `<img class="img-fluid rounded img-room" src="../public/${habitacionesCuadruples[index].tipo}.jpg" alt="">
-//                             <div class="d-flex flex-column align-items-center w-100 p-2">
-//                                 <h3 class="text-center">${habitacionesCuadruples[index].nombre}</h3>
-//                                 <p>${habitacionesCuadruples[index].info}</p>
-//                                 <p>${habitacionesCuadruples[index].descripcion}</p>
-//                                 <p>$${habitacionesCuadruples[index].precio}</p>
-//                                 <a href="#"><button type="button" class="btn btn-primary">SELECCIONAR</button></a>
-//                             </div>`; 
-//     habitacion.className = ("border");
-//     habitacion.classList.add("d-flex","flex-row","mb-3","rounded")
-//     contenedorHabitaciones.appendChild(habitacion);
-// }
-
-// for (let index = 0; index < habitacionesFamiliares.length; index++) {
-//     let habitacion=document.createElement("div");
-//     habitacion.innerHTML = `<img class="img-fluid rounded img-room" src="../public/${habitacionesFamiliares[index].tipo}.jpg" alt="">
-//                             <div class="d-flex flex-column align-items-center w-100 p-2">
-//                                 <h3 class="text-center">${habitacionesFamiliares[index].nombre}</h3>
-//                                 <p>${habitacionesFamiliares[index].info}</p>
-//                                 <p>${habitacionesFamiliares[index].descripcion}</p>
-//                                 <p>$${habitacionesFamiliares[index].precio}</p>
-//                                 <a href="#"><button type="button" class="btn btn-primary">SELECCIONAR</button></a>
-//                             </div>`; 
-//     habitacion.className = ("border");
-//     habitacion.classList.add("d-flex","flex-row","mb-3","rounded")
-//     contenedorHabitaciones.appendChild(habitacion);
-// }
-
-// =======================
-
 let divDias = document.getElementById('dias');
 let cantDias = document.createElement('p');
 cantDias.innerHTML = localStorage.getItem('dias');
@@ -133,6 +66,8 @@ divMenores.appendChild(cantMenores);
 
 let huespedes = parseInt(localStorage.getItem('adultos'))+parseInt(localStorage.getItem('menores'));
 
+let contenedorHabitaciones = document.getElementById("contenedor-habitaciones");
+
 if (huespedes==1) {
     for (let index = 0; index < habitacionesSimples.length; index++) {
     let habitacion=document.createElement("div");
@@ -142,8 +77,9 @@ if (huespedes==1) {
                                 <p>${habitacionesSimples[index].info}</p>
                                 <p>${habitacionesSimples[index].descripcion}</p>
                                 <p>$${habitacionesSimples[index].precio}</p>
-                                <a href="#"><button type="button" class="btn btn-primary">SELECCIONAR</button></a>
+                                <button type="button" class="btn btn-primary">SELECCIONAR</button>
                             </div>`; 
+    habitacion.id = habitacionesSimples[index].tipo;                        
     habitacion.className = ("d-flex");
     habitacion.classList.add("border","flex-row","mb-3","rounded")
     contenedorHabitaciones.appendChild(habitacion);
@@ -157,8 +93,9 @@ if (huespedes==1) {
                                 <p>${habitacionesDobles[index].info}</p>
                                 <p>${habitacionesDobles[index].descripcion}</p>
                                 <p>$${habitacionesDobles[index].precio}</p>
-                                <a href="#"><button type="button" class="btn btn-primary">SELECCIONAR</button></a>
-                            </div>`; 
+                                <button type="button" class="btn btn-primary">SELECCIONAR</button>
+                            </div>`;
+    habitacion.id = habitacionesDobles[index].tipo;                         
     habitacion.className = ("border");
     habitacion.classList.add("d-flex","flex-row","mb-3","rounded")
     contenedorHabitaciones.appendChild(habitacion);
@@ -172,8 +109,9 @@ if (huespedes==1) {
                                 <p>${habitacionesCuadruples[index].info}</p>
                                 <p>${habitacionesCuadruples[index].descripcion}</p>
                                 <p>$${habitacionesCuadruples[index].precio}</p>
-                                <a href="#"><button type="button" class="btn btn-primary">SELECCIONAR</button></a>
-                            </div>`; 
+                                <button type="button" class="btn btn-primary">SELECCIONAR</button>
+                            </div>`;
+    habitacion.id = habitacionesCuadruples[index].tipo;                        
     habitacion.className = ("border");
     habitacion.classList.add("d-flex","flex-row","mb-3","rounded")
     contenedorHabitaciones.appendChild(habitacion);}
@@ -186,8 +124,9 @@ if (huespedes==1) {
                                 <p>${habitacionesFamiliares[index].info}</p>
                                 <p>${habitacionesFamiliares[index].descripcion}</p>
                                 <p>$${habitacionesFamiliares[index].precio}</p>
-                                <a href="#"><button type="button" class="btn btn-primary">SELECCIONAR</button></a>
-                            </div>`; 
+                                <button type="button" class="btn btn-primary">SELECCIONAR</button>
+                            </div>`;
+    habitacion.id = habitacionesFamiliares[index].tipo;                        
     habitacion.className = ("border");
     habitacion.classList.add("d-flex","flex-row","mb-3","rounded")
     contenedorHabitaciones.appendChild(habitacion);}
@@ -199,5 +138,154 @@ if (huespedes==1) {
     contenedorHabitaciones.appendChild(mensaje);
 }
 
+// =============================================================
+let contenedorReserva = document.getElementById("contenedor-reserva");
 
-console.log("huespedes: "+huespedes);
+
+if (huespedes==1) {
+    for (let index = 0; index < habitacionesSimples.length; index++) {
+        let boton = document.getElementById(`${habitacionesSimples[index].tipo}`);
+    
+        boton.addEventListener("click", respuestaClick)
+        
+        function respuestaClick(){
+    
+            contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+            let info=document.createElement("div");
+    
+            info.innerHTML = `info ${habitacionesSimples[index].nombre}`; 
+            info.className = ("border");
+            info.classList.add("d-flex","flex-row","mb-3","rounded")
+            contenedorReserva.appendChild(info);
+        }
+    }
+} else if (huespedes==2) {
+    for (let index = 0; index < habitacionesDobles.length; index++) {
+        let boton = document.getElementById(`${habitacionesDobles[index].tipo}`);
+    
+        boton.addEventListener("click", respuestaClick)
+        
+        function respuestaClick(){
+    
+            contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+            let info=document.createElement("div");
+    
+            info.innerHTML = `info ${habitacionesDobles[index].nombre}`; 
+            info.className = ("border");
+            info.classList.add("d-flex","flex-row","mb-3","rounded")
+            contenedorReserva.appendChild(info);
+        }
+    }
+}else if ((huespedes==3)||(huespedes==4)) {
+    for (let index = 0; index < habitacionesCuadruples.length; index++) {
+        let boton = document.getElementById(`${habitacionesCuadruples[index].tipo}`);
+    
+        boton.addEventListener("click", respuestaClick)
+        
+        function respuestaClick(){
+    
+            contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+            let info=document.createElement("div");
+    
+            info.innerHTML = `info ${habitacionesCuadruples[index].nombre}`; 
+            info.className = ("border");
+            info.classList.add("d-flex","flex-row","mb-3","rounded")
+            contenedorReserva.appendChild(info);
+        }
+    }
+} else if ((huespedes>4)&&(huespedes<=6)) {
+    for (let index = 0; index < habitacionesFamiliares.length; index++) {
+        let boton = document.getElementById(`${habitacionesFamiliares[index].tipo}`);
+    
+        boton.addEventListener("click", respuestaClick)
+        
+        function respuestaClick(){
+    
+            contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+            let info=document.createElement("div");
+    
+            info.innerHTML = `info ${habitacionesFamiliares[index].nombre}`; 
+            info.className = ("border");
+            info.classList.add("d-flex","flex-row","mb-3","rounded")
+            contenedorReserva.appendChild(info);
+        }
+    }
+}else {
+    let mensaje=document.createElement("div");
+    mensaje.innerHTML = `No hay habitaciones disponibles`; 
+    mensaje.className = ("border");
+    mensaje.classList.add("d-flex","flex-row","mb-3","rounded")
+    contenedorHabitaciones.appendChild(mensaje);
+}
+
+
+
+
+
+// for (let index = 0; index < habitacionesSimples.length; index++) {
+//     let boton = document.getElementById(`${habitacionesSimples[index].tipo}`);
+
+//     boton.addEventListener("click", respuestaClick)
+    
+//     function respuestaClick(){
+
+//         contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+//         let info=document.createElement("div");
+
+//         info.innerHTML = `info ${habitacionesSimples[index].nombre}`; 
+//         info.className = ("border");
+//         info.classList.add("d-flex","flex-row","mb-3","rounded")
+//         contenedorReserva.appendChild(info);
+//     }
+// }
+
+// for (let index = 0; index < habitacionesDobles.length; index++) {
+//     let boton = document.getElementById(`${habitacionesDobles[index].tipo}`);
+
+//     boton.addEventListener("click", respuestaClick)
+    
+//     function respuestaClick(){
+
+//         contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+//         let info=document.createElement("div");
+
+//         info.innerHTML = `info ${habitacionesDobles[index].nombre}`; 
+//         info.className = ("border");
+//         info.classList.add("d-flex","flex-row","mb-3","rounded")
+//         contenedorReserva.appendChild(info);
+//     }
+// }
+
+// for (let index = 0; index < habitacionesCuadruples.length; index++) {
+//     let boton = document.getElementById(`${habitacionesCuadruples[index].tipo}`);
+
+//     boton.addEventListener("click", respuestaClick)
+    
+//     function respuestaClick(){
+
+//         contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+//         let info=document.createElement("div");
+
+//         info.innerHTML = `info ${habitacionesCuadruples[index].nombre}`; 
+//         info.className = ("border");
+//         info.classList.add("d-flex","flex-row","mb-3","rounded")
+//         contenedorReserva.appendChild(info);
+//     }
+// }
+
+// for (let index = 0; index < habitacionesFamiliares.length; index++) {
+//     let boton = document.getElementById(`${habitacionesFamiliares[index].tipo}`);
+
+//     boton.addEventListener("click", respuestaClick)
+    
+//     function respuestaClick(){
+
+//         contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+//         let info=document.createElement("div");
+
+//         info.innerHTML = `info ${habitacionesFamiliares[index].nombre}`; 
+//         info.className = ("border");
+//         info.classList.add("d-flex","flex-row","mb-3","rounded")
+//         contenedorReserva.appendChild(info);
+//     }
+// }
