@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-header {
+#header-main {
     color: white;
     margin: 0;
     height: 90vh;
@@ -134,4 +134,36 @@ main {
             opacity: 1;
         }
     }
+}
+
+// Pagina búsqueda
+
+.header-pages {
+    color: black;
+    margin: 0;
+    nav {
+        font-size: 1.1em;
+        li {
+            margin: 0 1rem;
+        }
+    }
+}
+
+#logo-negro {
+    width: 300px;
+}
+
+#contenedor-habitaciones {
+    // height: 300px;
+    .habitacion {
+        height: 250px;
+    }
+}
+
+#contenedor-reserva {
+    // height: 300px;
+}
+
+.img-room {
+    width: 250px;
 }

@@ -1,69 +1,61 @@
-// Desafío 5 - Objetos
-
-class Habitacion {
-    constructor (nombre,capacidad,precioPorDia){
-        this.nombre=nombre;
-        this.capacidad=capacidad;
-        this.precio=precioPorDia;
-    }
-    sumarIva(){
-        this.precio=this.precio*1.21;
-    }
-    mostrarDatos(){
-        console.log("La "+this.nombre+" tiene una capacidad de "+this.capacidad+" persona/s, y cuesta $"+this.precio+" por día (IVA incluido).");
-    }
-}
-
-const habitacionSimple = new Habitacion ("Habitación Simple",1,5000);
-const habitacionDoble = new Habitacion ("Habitación Doble",2,6000);
-const habitacionCuadruple = new Habitacion ("Habitacion Cuádruple",4,7000);
-const habitacionFamiliar = new Habitacion ("Habitación Familiar",6,8000);
+let dias = document.getElementById('dias');
 
 
-// Desafio 6 - Arrays
+// ================================
+// Contador adultos
 
-const listaHabitaciones = [];
+let contadorAdultos = document.getElementById('contadorAdultos');
+contadorAdultos.innerHTML = 2;
 
-listaHabitaciones.push (habitacionSimple, habitacionDoble, habitacionCuadruple, habitacionFamiliar);
+let btnSumaAdultos = document.getElementById('sumaAdultos');
+btnSumaAdultos.addEventListener('click', sumarAdultos);
 
-console.log(listaHabitaciones);
+let btnRestaAdultos = document.getElementById('restaAdultos');
+btnRestaAdultos.addEventListener('click', restarAdultos)
 
-habitacionSimple.sumarIva();
-habitacionDoble.sumarIva();
-habitacionCuadruple.sumarIva();
-habitacionFamiliar.sumarIva();
-
-
-habitacionSimple.mostrarDatos();
-habitacionDoble.mostrarDatos();
-habitacionCuadruple.mostrarDatos();
-habitacionFamiliar.mostrarDatos();
-
-
-// ===================================
-
-let adultos = parseInt(prompt("Ingrese la cantidad de adultos:"));
-let menores = parseInt(prompt("Ingrese la cantidad de menores:"));
-let dias = parseInt(prompt("Ingrese la cantidad de días:"));
-let huespedes = adultos+menores;
-let precio = 0;
-
-function calcularPrecio(){
-    if (huespedes==1) {
-        precio = habitacionSimple.precio*dias;
-        alert("Su estadía de "+dias+" dias, para "+huespedes+" persona, en una habitación simple, es de $"+precio+".");
-    } else if (huespedes==2) {
-        precio = habitacionDoble.precio*dias;
-        alert("Su estadía de "+dias+" dias, para "+huespedes+" personas, en una habitación doble, es de $"+precio+".");
-    }else if ((huespedes==3)||(huespedes==4)) {
-        precio = habitacionCuadruple.precio*dias;
-        alert("Su estadía de "+dias+" dias, para "+huespedes+" personas, en una habitación cuádruple, es de $"+precio+".");
-    }else if ((huespedes==5)||(huespedes==6)) {
-        precio = habitacionFamiliar.precio*dias;
-        alert("Su estadía de "+dias+" dias, para "+huespedes+" personas, en una habitación familiar, es de $"+precio+".");
-    }else {
-        alert("No tenemos habitaciones disponibles.");
+function sumarAdultos(){
+    if ((contadorAdultos.innerHTML)<6) {
+        contadorAdultos.innerHTML++;
     }
 }
 
-calcularPrecio();
+function restarAdultos(){
+    if ((contadorAdultos.innerHTML)>1) {
+        contadorAdultos.innerHTML--;
+    }
+}
+
+
+// ================================
+// Contador menores
+
+let contadorMenores = document.getElementById('contadorMenores');
+contadorMenores.innerHTML = 0;
+
+let btnSumaMenores = document.getElementById('sumaMenores');
+btnSumaMenores.addEventListener('click', sumarMenores);
+
+let btnRestaMenores = document.getElementById('restaMenores');
+btnRestaMenores.addEventListener('click', restarMenores)
+
+function sumarMenores(){
+    if ((contadorMenores.innerHTML)<6) {
+        contadorMenores.innerHTML++;
+    }
+}
+
+function restarMenores(){
+    if ((contadorMenores.innerHTML)>0) {
+        contadorMenores.innerHTML--;
+    }
+}
+
+
+let btnBuscar = document.getElementById('btnBuscar');
+btnBuscar.addEventListener('click', storageData);
+
+function storageData(){
+    sessionStorage.setItem('adultos', contadorAdultos.innerHTML);
+    sessionStorage.setItem('menores', contadorMenores.innerHTML);
+    sessionStorage.setItem('dias', dias.value);
+}
