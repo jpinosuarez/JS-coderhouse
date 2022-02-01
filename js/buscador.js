@@ -1,5 +1,3 @@
-// Objetos
-
 class Habitacion {
     constructor (nombre,descripcion,info,precio, tipo){
         this.nombre=nombre;
@@ -16,20 +14,150 @@ class Habitacion {
     }
 }
 
-const habitacionSimpleClasica = new Habitacion ("Habitación Simple Clásica","descripcion","info",5000,"simpleClasica");
-const habitacionDobleClasica = new Habitacion ("Habitación Doble Clásica","descripcion","info",6000,"dobleClasica");
-const habitacionCuadrupleClasica = new Habitacion ("Habitacion Cuádruple Clásica","descripcion","info",7000,"cuadrupleClasica");
-const habitacionFamiliarClasica = new Habitacion ("Habitación Familiar Clásica","descripcion","info",8000,"familiarClasica");
+let descripcion = "El Hotel Patagonia se encuentra en San Carlos de Bariloche, a 100 metros del Centro Cívico, y ofrece wifi gratis. Cuenta con un bar abierto las 24 horas. Las habitaciones incluyen smart TV y baño privado con bañera, bidet, artículos de aseo gratuitos y secador de pelo. El Hotelse encuentra a 21 km de la estación de esquí de Cerro Catedral, a 11 km de Bahía Serena y a 13 km del aeropuerto."
 
-const habitacionSimpleMaster = new Habitacion ("Habitación Simple Master","descripcion","info",5500,"simpleMaster");
-const habitacionDobleMaster = new Habitacion ("Habitación Doble Master","descripcion","info",6500,"dobleMaster");
-const habitacionCuadrupleMaster = new Habitacion ("Habitacion Cuádruple Master","descripcion","info",7500,"cuadrupleMaster");
-const habitacionFamiliarMaster = new Habitacion ("Habitación Familiar Master","descripcion","info",8500,"familiarMaster");
+const habitacionSimpleClasica = new Habitacion ("Habitación Simple Clásica",
+                                                descripcion,
+                                                `16 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte`,
+                                                5000,
+                                                "simpleClasica");
+const habitacionDobleClasica = new Habitacion ("Habitación Doble Clásica",
+                                                descripcion,
+                                                `22 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>`,
+                                                6000,
+                                                "dobleClasica");
+const habitacionCuadrupleClasica = new Habitacion ("Habitacion Cuádruple Clásica",
+                                                descripcion,
+                                                `25 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>`,
+                                                7000,
+                                                "cuadrupleClasica");
+const habitacionFamiliarClasica = new Habitacion ("Habitación Familiar Clásica",
+                                                descripcion,
+                                                `30 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>`,
+                                                8000,
+                                                "familiarClasica");
 
-const habitacionSimpleDeluxe = new Habitacion ("Habitación Simple Deluxe","descripcion","info",5500,"simpleDeluxe");
-const habitacionDobleDeluxe = new Habitacion ("Habitación Doble Deluxe","descripcion","info",6500,"dobleDeluxe");
-const habitacionCuadrupleDeluxe = new Habitacion ("Habitacion Cuádruple Deluxe","descripcion","info",7500,"cuadrupleDeluxe");
-const habitacionFamiliarDeluxe = new Habitacion ("Habitación Familiar Deluxe","descripcion","info",8500,"familiarDeluxe");
+const habitacionSimpleMaster = new Habitacion ("Habitación Simple Master",
+                                                descripcion,
+                                                `16 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>
+                                                Bañera con hidromasaje`,
+                                                5500,
+                                                "simpleMaster");
+const habitacionDobleMaster = new Habitacion ("Habitación Doble Master",
+                                                descripcion,
+                                                `22 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>
+                                                Bañera con hidromasaje`,
+                                                6500,
+                                                "dobleMaster");
+const habitacionCuadrupleMaster = new Habitacion ("Habitacion Cuádruple Master",
+                                                descripcion,
+                                                `25 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>
+                                                Bañera con hidromasaje`,
+                                                7500,
+                                                "cuadrupleMaster");
+const habitacionFamiliarMaster = new Habitacion ("Habitación Familiar Master",
+                                                descripcion,
+                                                `30 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>
+                                                Bañera con hidromasaje`,
+                                                8500,
+                                                "familiarMaster");
+
+const habitacionSimpleDeluxe = new Habitacion ("Habitación Simple Deluxe",
+                                                descripcion,
+                                                `20 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>
+                                                Jacuzzi en suite`,
+                                                6000,
+                                                "simpleDeluxe");
+const habitacionDobleDeluxe = new Habitacion ("Habitación Doble Deluxe",
+                                                descripcion,
+                                                `25 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>
+                                                Jacuzzi en suite`,
+                                                7000,
+                                                "dobleDeluxe");
+const habitacionCuadrupleDeluxe = new Habitacion ("Habitacion Cuádruple Deluxe",
+                                                descripcion,
+                                                `30 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>
+                                                Jacuzzi en suite`,
+                                                8000,
+                                                "cuadrupleDeluxe");
+const habitacionFamiliarDeluxe = new Habitacion ("Habitación Familiar Deluxe",
+                                                descripcion,
+                                                `35 m²<br>
+                                                Baño privado<br>
+                                                smart TV<br>
+                                                Minibar<br>
+                                                Wifi gratis<br>
+                                                Artículos de tocador gratuitos<br>
+                                                Caja fuerte<br>
+                                                Jacuzzi en suite`,
+                                                9000,
+                                                "familiarDeluxe");
 
 
 // arrays habitaciones por tipo
@@ -49,86 +177,82 @@ console.log(habitacionesFamiliares);
 
 let divDias = document.getElementById('dias');
 let cantDias = document.createElement('p');
-cantDias.innerHTML = localStorage.getItem('dias');
+cantDias.innerHTML = sessionStorage.getItem('dias');
 divDias.appendChild(cantDias);
 
 let divAdultos = document.getElementById('adultos');
 let cantAdultos = document.createElement('p');
-cantAdultos.innerHTML = localStorage.getItem('adultos');
+cantAdultos.innerHTML = sessionStorage.getItem('adultos');
 divAdultos.appendChild(cantAdultos);
 
 let divMenores = document.getElementById('menores');
 let cantMenores = document.createElement('p');
-cantMenores.innerHTML = localStorage.getItem('menores');
+cantMenores.innerHTML = sessionStorage.getItem('menores');
 divMenores.appendChild(cantMenores);
 
 // ==========================
 
-let huespedes = parseInt(localStorage.getItem('adultos'))+parseInt(localStorage.getItem('menores'));
+let huespedes = parseInt(sessionStorage.getItem('adultos'))+parseInt(sessionStorage.getItem('menores'));
 
 let contenedorHabitaciones = document.getElementById("contenedor-habitaciones");
 
 if (huespedes==1) {
     for (let index = 0; index < habitacionesSimples.length; index++) {
     let habitacion=document.createElement("div");
-    habitacion.innerHTML = `<img class="img-fluid rounded img-room" src="../public/${habitacionesSimples[index].tipo}.jpg" alt="">
-                            <div class="d-flex flex-column align-items-center w-100 p-2">
+    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesSimples[index].tipo}.jpg" alt="">
+                            <div class="d-flex flex-column align-items-start px-4 w-100 p-2">
                                 <h3 class="text-center">${habitacionesSimples[index].nombre}</h3>
                                 <p>${habitacionesSimples[index].info}</p>
-                                <p>${habitacionesSimples[index].descripcion}</p>
-                                <p>$${habitacionesSimples[index].precio}</p>
+                                <p>Precio por noche: $${habitacionesSimples[index].precio}</p>
                                 <button type="button" class="btn btn-primary">SELECCIONAR</button>
                             </div>`; 
     habitacion.id = habitacionesSimples[index].tipo;                        
     habitacion.className = ("d-flex");
-    habitacion.classList.add("border","flex-row","mb-3","rounded")
+    habitacion.classList.add("align-items-center", "border","flex-row","mb-3","rounded")
     contenedorHabitaciones.appendChild(habitacion);
     }
 } else if (huespedes==2) {
     for (let index = 0; index < habitacionesDobles.length; index++) {
     let habitacion=document.createElement("div");
-    habitacion.innerHTML = `<img class="img-fluid rounded img-room" src="../public/${habitacionesDobles[index].tipo}.jpg" alt="">
+    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesDobles[index].tipo}.jpg" alt="">
                             <div class="d-flex flex-column align-items-center w-100 p-2">
                                 <h3 class="text-center">${habitacionesDobles[index].nombre}</h3>
                                 <p>${habitacionesDobles[index].info}</p>
-                                <p>${habitacionesDobles[index].descripcion}</p>
-                                <p>$${habitacionesDobles[index].precio}</p>
+                                <p>Precio por noche: $${habitacionesDobles[index].precio}</p>
                                 <button type="button" class="btn btn-primary">SELECCIONAR</button>
                             </div>`;
     habitacion.id = habitacionesDobles[index].tipo;                         
-    habitacion.className = ("border");
-    habitacion.classList.add("d-flex","flex-row","mb-3","rounded")
+    habitacion.className = ("d-flex");
+    habitacion.classList.add("align-items-center", "border","flex-row","mb-3","rounded")
     contenedorHabitaciones.appendChild(habitacion);
     }
 }else if ((huespedes==3)||(huespedes==4)) {
     for (let index = 0; index < habitacionesCuadruples.length; index++) {
     let habitacion=document.createElement("div");
-    habitacion.innerHTML = `<img class="img-fluid rounded img-room" src="../public/${habitacionesCuadruples[index].tipo}.jpg" alt="">
+    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesCuadruples[index].tipo}.jpg" alt="">
                             <div class="d-flex flex-column align-items-center w-100 p-2">
                                 <h3 class="text-center">${habitacionesCuadruples[index].nombre}</h3>
                                 <p>${habitacionesCuadruples[index].info}</p>
-                                <p>${habitacionesCuadruples[index].descripcion}</p>
-                                <p>$${habitacionesCuadruples[index].precio}</p>
+                                <p>Precio por noche: $${habitacionesCuadruples[index].precio}</p>
                                 <button type="button" class="btn btn-primary">SELECCIONAR</button>
                             </div>`;
     habitacion.id = habitacionesCuadruples[index].tipo;                        
-    habitacion.className = ("border");
-    habitacion.classList.add("d-flex","flex-row","mb-3","rounded")
+    habitacion.className = ("d-flex");
+    habitacion.classList.add("align-items-center", "border","flex-row","mb-3","rounded")
     contenedorHabitaciones.appendChild(habitacion);}
 } else if ((huespedes>4)&&(huespedes<=6)) {
     for (let index = 0; index < habitacionesFamiliares.length; index++) {
     let habitacion=document.createElement("div");
-    habitacion.innerHTML = `<img class="img-fluid rounded img-room" src="../public/${habitacionesFamiliares[index].tipo}.jpg" alt="">
+    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesFamiliares[index].tipo}.jpg" alt="">
                             <div class="d-flex flex-column align-items-center w-100 p-2">
                                 <h3 class="text-center">${habitacionesFamiliares[index].nombre}</h3>
                                 <p>${habitacionesFamiliares[index].info}</p>
-                                <p>${habitacionesFamiliares[index].descripcion}</p>
-                                <p>$${habitacionesFamiliares[index].precio}</p>
+                                <p>Precio por noche: $${habitacionesFamiliares[index].precio}</p>
                                 <button type="button" class="btn btn-primary">SELECCIONAR</button>
                             </div>`;
     habitacion.id = habitacionesFamiliares[index].tipo;                        
-    habitacion.className = ("border");
-    habitacion.classList.add("d-flex","flex-row","mb-3","rounded")
+    habitacion.className = ("d-flex");
+    habitacion.classList.add("align-items-center", "border","flex-row","mb-3","rounded")
     contenedorHabitaciones.appendChild(habitacion);}
 }else {
     let mensaje=document.createElement("div");
@@ -153,9 +277,13 @@ if (huespedes==1) {
             contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
             let info=document.createElement("div");
     
-            info.innerHTML = `info ${habitacionesSimples[index].nombre}`; 
-            info.className = ("border");
-            info.classList.add("d-flex","flex-row","mb-3","rounded")
+            info.innerHTML = `<h3>${habitacionesSimples[index].nombre}</h3> <br>
+                                <p>${habitacionesSimples[index].descripcion}</p> <br>
+                                <p>${habitacionesSimples[index].info}</p> <br>
+                                <p>Precio por noche: $${habitacionesSimples[index].precio}</p> <br>
+                                <p>Precio por ${sessionStorage.getItem('dias')} noches: $${sessionStorage.getItem('dias')*habitacionesSimples[index].precio}</p>`; 
+            info.className = ("d-flex");
+            info.classList.add("flex-column","my-3","rounded")
             contenedorReserva.appendChild(info);
         }
     }
