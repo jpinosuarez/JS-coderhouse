@@ -1,7 +1,3 @@
-// let dias = document.getElementById('dias');
-
-
-// ================================
 // Contador adultos
 
 let contadorAdultos = document.getElementById('contadorAdultos');
@@ -57,7 +53,7 @@ btnBuscar.addEventListener('click', storageData);
 // =========================================================
 // JQuery UI Datepicker
 
-$(function () {
+$(()=> {
     $("#checkIn").datepicker({
         minDate: 0,
         maxDate: '+1Y+6M',
@@ -70,7 +66,7 @@ $(function () {
         monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
         monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
         onSelect: function (dateStr) {
-            var min = $(this).datepicker('getDate');
+            let min = $(this).datepicker('getDate');
             $("#checkOut").datepicker('option', 'minDate', min || '0');
         }
     });
@@ -87,13 +83,12 @@ $(function () {
         monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
         monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
         onSelect: function (dateStr) {
-            var max = $(this).datepicker('getDate');
+            let max = $(this).datepicker('getDate');
             $('#datepicker').datepicker('option', 'maxDate', max || '+1Y+6M');
-            var start = $("#checkIn").datepicker("getDate");
-            var end = $("#checkOut").datepicker("getDate");
-            var days = (end - start) / (1000 * 60 * 60 * 24);
-            $("#mostrarDias").val(days);
-            sessionStorage.setItem('dias', days)
+            let inicio = $("#checkIn").datepicker("getDate");
+            let fin = $("#checkOut").datepicker("getDate");
+            let dias = (fin - inicio) / (1000 * 60 * 60 * 24);
+            sessionStorage.setItem('dias', dias)
         }
     });
 });
@@ -102,17 +97,4 @@ $(function () {
 function storageData() {
     sessionStorage.setItem('adultos', contadorAdultos.innerHTML);
     sessionStorage.setItem('menores', contadorMenores.innerHTML);
-    // sessionStorage.setItem('dias', dias.value);
-    // sessionStorage.setItem('checkIn', from);
-    // sessionStorage.setItem('checkOut', to);
 }
-
-
-
-// Calcular dias de diferencia
-
-// let fecha1 = $('#checkIn').datepicker('getDate')
-
-// console.log(fecha1);
-
-// =============================================================
