@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'Karla', sans-serif;
 }
 
 #header-main {
@@ -153,6 +154,7 @@ main {
     width: 300px;
 }
 
+
 #contenedor-habitaciones {
     // height: 300px;
     .habitacion {
@@ -166,4 +168,23 @@ main {
 
 .img-room {
     width: 250px;
+}
+
+// Tarjeta clima
+
+.tarjetaClima {
+    padding: 20px;
+    height: fit-content;
+    border: solid 1px black;
+    border-radius: 10px;
+    align-self: center;
+    .descripcion {
+        text-transform: capitalize;
+    }
+    #descripcionIcono {
+        align-items: center;
+    }
+    div .ciudad {
+        text-transform: uppercase;
+    }
 }

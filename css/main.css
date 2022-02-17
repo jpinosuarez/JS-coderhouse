@@ -1,5 +1,6 @@
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: 'Karla', sans-serif; }
 
 #header-main {
   color: white;
@@ -122,3 +123,16 @@ main #item-8 {
 
 .img-room {
   width: 250px; }
+
+.tarjetaClima {
+  padding: 20px;
+  height: fit-content;
+  border: solid 1px black;
+  border-radius: 10px;
+  align-self: center; }
+  .tarjetaClima .descripcion {
+    text-transform: capitalize; }
+  .tarjetaClima #descripcionIcono {
+    align-items: center; }
+  .tarjetaClima div .ciudad {
+    text-transform: uppercase; }

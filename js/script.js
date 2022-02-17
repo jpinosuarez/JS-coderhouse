@@ -53,7 +53,7 @@ btnBuscar.addEventListener('click', storageData);
 // =========================================================
 // JQuery UI Datepicker
 
-$(()=> {
+$(() => {
     $("#checkIn").datepicker({
         minDate: 0,
         maxDate: '+1Y+6M',
@@ -98,3 +98,26 @@ function storageData() {
     sessionStorage.setItem('adultos', contadorAdultos.innerHTML);
     sessionStorage.setItem('menores', contadorMenores.innerHTML);
 }
+
+// ========================
+//  Clima API
+
+$(()=>{
+    function  mostrarClima(){
+        $.get("https://api.openweathermap.org/data/2.5/weather?q=bariloche&units=metric&lang=es&appid=64c3b298c7614c1b27eff98df5713b0e", (data)=>{
+            const {name} = data;
+            const {icon, description} = data.weather[0];
+            const {temp, humidity} = data.main;
+            const {speed} = data.wind;
+            console.log(name, icon, description, temp, humidity, speed);
+            document.querySelector(".ciudad").innerText = "Clima en "+name;
+            document.querySelector(".icono").src = "http://openweathermap.org/img/wn/"+icon+".png";
+            document.querySelector(".descripcion").innerText = description;
+            document.querySelector(".temperatura").innerText = "Temperatura: " + Math.trunc(temp) + "° C";
+            document.querySelector(".humedad").innerText = "Humedad: " + Math.trunc(humidity) + "%";
+            document.querySelector(".viento").innerText = "Viento: " + Math.trunc(speed) + " Km/h";
+        })
+    };
+
+    mostrarClima();
+})
