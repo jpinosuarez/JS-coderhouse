@@ -178,16 +178,19 @@ console.log(habitacionesFamiliares);
 let divDias = document.getElementById('dias');
 let cantDias = document.createElement('p');
 cantDias.innerHTML = sessionStorage.getItem('dias');
+cantDias.className = "text-center";
 divDias.appendChild(cantDias);
 
 let divAdultos = document.getElementById('adultos');
 let cantAdultos = document.createElement('p');
 cantAdultos.innerHTML = sessionStorage.getItem('adultos');
+cantAdultos.className = "text-center";
 divAdultos.appendChild(cantAdultos);
 
 let divMenores = document.getElementById('menores');
 let cantMenores = document.createElement('p');
 cantMenores.innerHTML = sessionStorage.getItem('menores');
+cantMenores.className = "text-center";
 divMenores.appendChild(cantMenores);
 
 // ==========================
@@ -199,12 +202,12 @@ let contenedorHabitaciones = document.getElementById("contenedor-habitaciones");
 if (huespedes==1) {
     for (let index = 0; index < habitacionesSimples.length; index++) {
     let habitacion=document.createElement("div");
-    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesSimples[index].tipo}.jpg" alt="">
+    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesSimples[index].tipo}.webp" alt="">
                             <div class="d-flex flex-column align-items-start px-4 w-100 p-2">
                                 <h3 class="text-center">${habitacionesSimples[index].nombre}</h3>
                                 <p>${habitacionesSimples[index].info}</p>
                                 <p>Precio por noche: $${habitacionesSimples[index].precio}</p>
-                                <button type="button" class="btn btn-primary">SELECCIONAR</button>
+                                <button type="button" class="btn-seleccionar">Seleccionar</button>
                             </div>`; 
     habitacion.id = habitacionesSimples[index].tipo;                        
     habitacion.className = ("d-flex");
@@ -214,12 +217,12 @@ if (huespedes==1) {
 } else if (huespedes==2) {
     for (let index = 0; index < habitacionesDobles.length; index++) {
     let habitacion=document.createElement("div");
-    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesDobles[index].tipo}.jpg" alt="">
+    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesDobles[index].tipo}.webp" alt="">
                             <div class="d-flex flex-column align-items-center w-100 p-2">
                                 <h3 class="text-center">${habitacionesDobles[index].nombre}</h3>
                                 <p>${habitacionesDobles[index].info}</p>
                                 <p>Precio por noche: $${habitacionesDobles[index].precio}</p>
-                                <button type="button" class="btn btn-primary">SELECCIONAR</button>
+                                <button type="button" class="btn-seleccionar">Seleccionar</button>
                             </div>`;
     habitacion.id = habitacionesDobles[index].tipo;                         
     habitacion.className = ("d-flex");
@@ -229,12 +232,12 @@ if (huespedes==1) {
 }else if ((huespedes==3)||(huespedes==4)) {
     for (let index = 0; index < habitacionesCuadruples.length; index++) {
     let habitacion=document.createElement("div");
-    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesCuadruples[index].tipo}.jpg" alt="">
+    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesCuadruples[index].tipo}.webp" alt="">
                             <div class="d-flex flex-column align-items-center w-100 p-2">
                                 <h3 class="text-center">${habitacionesCuadruples[index].nombre}</h3>
                                 <p>${habitacionesCuadruples[index].info}</p>
                                 <p>Precio por noche: $${habitacionesCuadruples[index].precio}</p>
-                                <button type="button" class="btn btn-primary">SELECCIONAR</button>
+                                <button type="button" class="btn-seleccionar">Seleccionar</button>
                             </div>`;
     habitacion.id = habitacionesCuadruples[index].tipo;                        
     habitacion.className = ("d-flex");
@@ -243,12 +246,12 @@ if (huespedes==1) {
 } else if ((huespedes>4)&&(huespedes<=6)) {
     for (let index = 0; index < habitacionesFamiliares.length; index++) {
     let habitacion=document.createElement("div");
-    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesFamiliares[index].tipo}.jpg" alt="">
+    habitacion.innerHTML = `<img class="img-fluid rounded img-room h-100" src="../public/${habitacionesFamiliares[index].tipo}.webp" alt="">
                             <div class="d-flex flex-column align-items-center w-100 p-2">
                                 <h3 class="text-center">${habitacionesFamiliares[index].nombre}</h3>
                                 <p>${habitacionesFamiliares[index].info}</p>
                                 <p>Precio por noche: $${habitacionesFamiliares[index].precio}</p>
-                                <button type="button" class="btn btn-primary">SELECCIONAR</button>
+                                <button type="button" class="btn-seleccionar">Seleccionar</button>
                             </div>`;
     habitacion.id = habitacionesFamiliares[index].tipo;                        
     habitacion.className = ("d-flex");
@@ -274,14 +277,18 @@ if (huespedes==1) {
         
         function respuestaClick(){
     
-            contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+            contenedorReserva.innerHTML=`<h2 class="text-center">Mi reserva</h2>`
             let info=document.createElement("div");
     
-            info.innerHTML = `<h3>${habitacionesSimples[index].nombre}</h3> <br>
-                                <p>${habitacionesSimples[index].descripcion}</p> <br>
-                                <p>${habitacionesSimples[index].info}</p> <br>
-                                <p>Precio por noche: $${habitacionesSimples[index].precio}</p> <br>
-                                <p>Precio por ${sessionStorage.getItem('dias')} noches: $${sessionStorage.getItem('dias')*habitacionesSimples[index].precio}</p>`; 
+            info.innerHTML = `<h3 class="text-center mx-3">${habitacionesSimples[index].nombre}</h3> <br>
+                                <p class="text-center mx-3">${habitacionesSimples[index].descripcion}</p> <br>
+                                <p class="mx-3">${habitacionesSimples[index].info}</p> <br>
+                                <p class="mx-3">Precio por noche: $${habitacionesSimples[index].precio}</p> <br>
+                                <p class="mx-3">Precio por ${sessionStorage.getItem('dias')} noches: $${sessionStorage.getItem('dias')*habitacionesSimples[index].precio}</p>
+                                <div class="d-flex justify-content-center my-3">
+                                    <button class="btn-seleccionar">Reservar</button>
+                                </div>
+                                `; 
             info.className = ("d-flex");
             info.classList.add("flex-column","my-3","rounded")
             contenedorReserva.appendChild(info);
@@ -295,12 +302,20 @@ if (huespedes==1) {
         
         function respuestaClick(){
     
-            contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+            contenedorReserva.innerHTML=`<h2 class="text-center">Mi reserva</h2>`
             let info=document.createElement("div");
     
-            info.innerHTML = `info ${habitacionesDobles[index].nombre}`; 
-            info.className = ("border");
-            info.classList.add("d-flex","flex-row","mb-3","rounded")
+            info.innerHTML = `<h3 class="text-center mx-3">${habitacionesDobles[index].nombre}</h3> <br>
+                                <p class="text-center mx-3">${habitacionesDobles[index].descripcion}</p> <br>
+                                <p class="mx-3">${habitacionesDobles[index].info}</p> <br>
+                                <p class="mx-3">Precio por noche: $${habitacionesDobles[index].precio}</p> <br>
+                                <p class="mx-3">Precio por ${sessionStorage.getItem('dias')} noches: $${sessionStorage.getItem('dias')*habitacionesDobles[index].precio}</p>
+                                <div class="d-flex justify-content-center my-3">
+                                    <button class="btn-seleccionar">Reservar</button>
+                                </div>
+                                `; 
+            info.className = ("d-flex");
+            info.classList.add("flex-column","my-3","rounded")
             contenedorReserva.appendChild(info);
         }
     }
@@ -312,12 +327,20 @@ if (huespedes==1) {
         
         function respuestaClick(){
     
-            contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+            contenedorReserva.innerHTML=`<h2 class="text-center">Mi reserva</h2>`
             let info=document.createElement("div");
     
-            info.innerHTML = `info ${habitacionesCuadruples[index].nombre}`; 
-            info.className = ("border");
-            info.classList.add("d-flex","flex-row","mb-3","rounded")
+            info.innerHTML = `<h3 class="text-center mx-3">${habitacionesCuadruples[index].nombre}</h3> <br>
+                                <p class="text-center mx-3">${habitacionesCuadruples[index].descripcion}</p> <br>
+                                <p class="mx-3">${habitacionesCuadruples[index].info}</p> <br>
+                                <p class="mx-3">Precio por noche: $${habitacionesCuadruples[index].precio}</p> <br>
+                                <p class="mx-3">Precio por ${sessionStorage.getItem('dias')} noches: $${sessionStorage.getItem('dias')*habitacionesCuadruples[index].precio}</p>
+                                <div class="d-flex justify-content-center my-3">
+                                    <button class="btn-seleccionar">Reservar</button>
+                                </div>
+                                `; 
+            info.className = ("d-flex");
+            info.classList.add("flex-column","my-3","rounded")
             contenedorReserva.appendChild(info);
         }
     }
@@ -329,12 +352,20 @@ if (huespedes==1) {
         
         function respuestaClick(){
     
-            contenedorReserva.innerHTML=`<h2 class="text-center">MI RESERVA</h2>`
+            contenedorReserva.innerHTML=`<h2 class="text-center">Mi reserva</h2>`
             let info=document.createElement("div");
     
-            info.innerHTML = `info ${habitacionesFamiliares[index].nombre}`; 
-            info.className = ("border");
-            info.classList.add("d-flex","flex-row","mb-3","rounded")
+            info.innerHTML = `<h3 class="text-center mx-3">${habitacionesFamiliares[index].nombre}</h3> <br>
+                                <p class="text-center mx-3">${habitacionesFamiliares[index].descripcion}</p> <br>
+                                <p class="mx-3">${habitacionesFamiliares[index].info}</p> <br>
+                                <p class="mx-3">Precio por noche: $${habitacionesFamiliares[index].precio}</p> <br>
+                                <p class="mx-3">Precio por ${sessionStorage.getItem('dias')} noches: $${sessionStorage.getItem('dias')*habitacionesFamiliares[index].precio}</p>
+                                <div class="d-flex justify-content-center my-3">
+                                    <button class="btn-seleccionar">Reservar</button>
+                                </div>
+                                `; 
+            info.className = ("d-flex");
+            info.classList.add("flex-column","my-3","rounded")
             contenedorReserva.appendChild(info);
         }
     }
