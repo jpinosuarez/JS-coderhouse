@@ -18,12 +18,14 @@ body {
       margin: 0 1rem; }
   #header-main #header-section {
     height: 100%; }
-  #header-main #header-div img {
-    width: 500px;
-    margin: 50px 0 30px 0; }
-  #header-main #header-div p {
-    font-size: 1.6em;
-    font-weight: 400; }
+  #header-main #header-div {
+    opacity: 0; }
+    #header-main #header-div img {
+      width: 500px;
+      margin: 50px 0 30px 0; }
+    #header-main #header-div p {
+      font-size: 1.6em;
+      font-weight: 400; }
   #header-main #simulador {
     color: black;
     height: 150px;
@@ -118,9 +120,6 @@ main #item-8 {
 
 #logo-negro {
   width: 300px; }
-
-#contenedor-habitaciones .habitacion {
-  height: 250px; }
 
 .img-room {
   width: 250px; }
@@ -262,4 +261,11 @@ button:hover .button-text {
       max-width: 100% !important; }
   #checkInOut {
     flex-direction: column !important;
-    margin-bottom: 30px; } }
+    margin-bottom: 30px; }
+  #clima {
+    margin: 1rem; }
+  #buscador-main {
+    flex-direction: column !important; }
+  .habitacion {
+    flex-direction: column !important;
+    height: auto !important; } }

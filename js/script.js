@@ -121,3 +121,9 @@ $(()=>{
 
     mostrarClima();
 })
+
+// Jquery animation
+
+$(()=>{
+    $("#header-div").fadeTo(4000, 1);
+})
