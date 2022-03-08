@@ -332,35 +332,50 @@ button:hover .button-text {
 }
 // ===============================
 @media screen and (max-width: 768px){
-    #simulador {
-        flex-direction: column !important;
+    #header-main {
+        height: auto !important;
+        #simulador {
+            flex-direction: column !important;
+            height: auto !important;
+            width: 75%;
+            margin: 20px 10px;
+            padding: 20px 10px;
+            #btnBuscar {
+                margin: 20px 0;
+            }
+        }
+    } 
+
+    #main-section {
+        margin: 50px 10px !important;
     }
+    
     #main-grid {
         display: block !important;
-        #item-1 {
-            height:max-content !important;
-            background-size: auto !important;
-        }
-        item-2 {
-            grid-area: auto;
-        }
-        item-3 {
-            grid-area: auto;
-        }
-        item-4 {
-            grid-area: auto;
-        }
-        item-5 {
-            grid-area: auto;
-        }
-        item-6 {
-            grid-area: auto;
-        }
-        item-7 {
-            grid-area: auto;
-        }
-        item-8 {
-            grid-area: auto;
+        height: auto !important;
+        .item {
+            height: 500px !important;
+            background-size: cover !important;
+            margin: 20px 0 !important;
+            .overlay {
+                opacity: 100%;
+            }
         }
     }
+}
+
+#mapaClima {
+    .container {
+        flex-direction: column !important;
+        div {
+            iframe {
+                max-width: 100% !important;
+            }
+        }
+    }
+}
+
+#checkInOut {
+    flex-direction: column !important;
+    margin-bottom: 30px;
 }

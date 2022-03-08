@@ -235,24 +235,33 @@ button:hover .button-text {
   outline: none; }
 
 @media screen and (max-width: 768px) {
-  #simulador {
-    flex-direction: column !important; }
+  #header-main {
+    height: auto !important; }
+    #header-main #simulador {
+      flex-direction: column !important;
+      height: auto !important;
+      width: 75%;
+      margin: 20px 10px;
+      padding: 20px 10px; }
+      #header-main #simulador #btnBuscar {
+        margin: 20px 0; }
+  #main-section {
+    margin: 50px 10px !important; }
   #main-grid {
-    display: block !important; }
-    #main-grid #item-1 {
-      height: max-content !important;
-      background-size: auto !important; }
-    #main-grid item-2 {
-      grid-area: auto; }
-    #main-grid item-3 {
-      grid-area: auto; }
-    #main-grid item-4 {
-      grid-area: auto; }
-    #main-grid item-5 {
-      grid-area: auto; }
-    #main-grid item-6 {
-      grid-area: auto; }
-    #main-grid item-7 {
-      grid-area: auto; }
-    #main-grid item-8 {
-      grid-area: auto; } }
+    display: block !important;
+    height: auto !important; }
+    #main-grid .item {
+      height: 500px !important;
+      background-size: cover !important;
+      margin: 20px 0 !important; }
+      #main-grid .item .overlay {
+        opacity: 100%; } }
+
+#mapaClima .container {
+  flex-direction: column !important; }
+  #mapaClima .container div iframe {
+    max-width: 100% !important; }
+
+#checkInOut {
+  flex-direction: column !important;
+  margin-bottom: 30px; }
