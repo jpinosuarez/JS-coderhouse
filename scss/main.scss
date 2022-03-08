@@ -362,20 +362,20 @@ button:hover .button-text {
             }
         }
     }
-}
-
-#mapaClima {
-    .container {
-        flex-direction: column !important;
-        div {
-            iframe {
-                max-width: 100% !important;
+    #mapaClima {
+        .container {
+            flex-direction: column !important;
+            div {
+                iframe {
+                    max-width: 100% !important;
+                }
             }
         }
     }
+    
+    #checkInOut {
+        flex-direction: column !important;
+        margin-bottom: 30px;
+    }
 }
 
-#checkInOut {
-    flex-direction: column !important;
-    margin-bottom: 30px;
-}

@@ -255,13 +255,11 @@ button:hover .button-text {
       background-size: cover !important;
       margin: 20px 0 !important; }
       #main-grid .item .overlay {
-        opacity: 100%; } }
-
-#mapaClima .container {
-  flex-direction: column !important; }
-  #mapaClima .container div iframe {
-    max-width: 100% !important; }
-
-#checkInOut {
-  flex-direction: column !important;
-  margin-bottom: 30px; }
+        opacity: 100%; }
+  #mapaClima .container {
+    flex-direction: column !important; }
+    #mapaClima .container div iframe {
+      max-width: 100% !important; }
+  #checkInOut {
+    flex-direction: column !important;
+    margin-bottom: 30px; } }
